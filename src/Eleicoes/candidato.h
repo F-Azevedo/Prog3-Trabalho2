@@ -27,6 +27,7 @@ public:
               string& nome,
               string& nome_urna,
               string& nascimento,
+              string& dia_da_eleicao,
               char sexo);
 
     bool foiEleito() const;

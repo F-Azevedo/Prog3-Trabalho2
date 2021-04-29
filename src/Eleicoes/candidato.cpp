@@ -5,7 +5,6 @@
 #include "candidato.h"
 
 //Construtor de Candidato.
-
 Candidato::Candidato(int numero,
                      int votos,
                      int num_partido,
@@ -13,6 +12,7 @@ Candidato::Candidato(int numero,
                      string& nome,
                      string& nome_urna,
                      string& nascimento,
+                     string& dia_da_eleicao,
                      char sexo){
     this->nome = nome;
     this->nome_urna = nome_urna;
@@ -21,7 +21,8 @@ Candidato::Candidato(int numero,
     this->status = status;
     this->sexo = sexo;
     this->votos = votos;
-    this->idade = stoi("10");
+    this->nasc = nascimento;
+    this->idade = stoi(dia_da_eleicao) - stoi(nascimento);
 }
 
 bool Candidato::foiEleito() const {
