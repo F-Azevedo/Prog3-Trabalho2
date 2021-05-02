@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Eleicoes/Eleicao.cpp
-Eleicao.h
-/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Eleicoes/Eleicao.h
-
 /home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Eleicoes/Eleicao.h
 iostream
 -
@@ -22,17 +18,17 @@ candidato.h
 partido.h
 /home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Eleicoes/partido.h
 
-/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Eleicoes/candidato.cpp
-candidato.h
-/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Eleicoes/candidato.h
-
 /home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Eleicoes/candidato.h
 iostream
 -
-
-/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Eleicoes/partido.cpp
-partido.h
-/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Eleicoes/partido.h
+fstream
+-
+string
+-
+sstream
+-
+vector
+-
 
 /home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Eleicoes/partido.h
 iostream
@@ -42,29 +38,13 @@ vector
 candidato.h
 /home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Eleicoes/candidato.h
 
-/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Entrada/Leitor.cpp
-Leitor.h
-/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Entrada/Leitor.h
+/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Saida/Estatisticas.cpp
+Estatisticas.h
+/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Saida/Estatisticas.h
+
+/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Saida/Estatisticas.h
 iostream
 -
-string
--
-exception
--
-
-/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Entrada/Leitor.h
-../Eleicoes/Eleicao.h
-/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Eleicoes/Eleicao.h
-iostream
--
-fstream
--
-string
--
-sstream
--
-
-/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Testador/main.cpp
 ../Eleicoes/Eleicao.h
 /home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Eleicoes/Eleicao.h
 

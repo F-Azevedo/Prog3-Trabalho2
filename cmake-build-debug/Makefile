@@ -250,6 +250,33 @@ src/Entrada/Leitor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/build.make CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Entrada/Leitor.cpp.s
 .PHONY : src/Entrada/Leitor.cpp.s
 
+src/Saida/Estatisticas.o: src/Saida/Estatisticas.cpp.o
+
+.PHONY : src/Saida/Estatisticas.o
+
+# target to build an object file
+src/Saida/Estatisticas.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/build.make CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Saida/Estatisticas.cpp.o
+.PHONY : src/Saida/Estatisticas.cpp.o
+
+src/Saida/Estatisticas.i: src/Saida/Estatisticas.cpp.i
+
+.PHONY : src/Saida/Estatisticas.i
+
+# target to preprocess a source file
+src/Saida/Estatisticas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/build.make CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Saida/Estatisticas.cpp.i
+.PHONY : src/Saida/Estatisticas.cpp.i
+
+src/Saida/Estatisticas.s: src/Saida/Estatisticas.cpp.s
+
+.PHONY : src/Saida/Estatisticas.s
+
+# target to generate assembly for a file
+src/Saida/Estatisticas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/build.make CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Saida/Estatisticas.cpp.s
+.PHONY : src/Saida/Estatisticas.cpp.s
+
 src/Testador/main.o: src/Testador/main.cpp.o
 
 .PHONY : src/Testador/main.o
@@ -298,6 +325,9 @@ help:
 	@echo "... src/Entrada/Leitor.o"
 	@echo "... src/Entrada/Leitor.i"
 	@echo "... src/Entrada/Leitor.s"
+	@echo "... src/Saida/Estatisticas.o"
+	@echo "... src/Saida/Estatisticas.i"
+	@echo "... src/Saida/Estatisticas.s"
 	@echo "... src/Testador/main.o"
 	@echo "... src/Testador/main.i"
 	@echo "... src/Testador/main.s"

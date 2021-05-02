@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Eleicoes/candidato.cpp.o"
   "CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Eleicoes/partido.cpp.o"
   "CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Entrada/Leitor.cpp.o"
+  "CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Saida/Estatisticas.cpp.o"
   "CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Testador/main.cpp.o"
 )
 

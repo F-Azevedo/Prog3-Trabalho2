@@ -19,8 +19,16 @@ CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Entrada/Leitor.cpp.o: ../src
 CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Entrada/Leitor.cpp.o: ../src/Entrada/Leitor.cpp
 CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Entrada/Leitor.cpp.o: ../src/Entrada/Leitor.h
 
+CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Saida/Estatisticas.cpp.o: ../src/Eleicoes/Eleicao.h
+CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Saida/Estatisticas.cpp.o: ../src/Eleicoes/candidato.h
+CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Saida/Estatisticas.cpp.o: ../src/Eleicoes/partido.h
+CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Saida/Estatisticas.cpp.o: ../src/Saida/Estatisticas.cpp
+CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Saida/Estatisticas.cpp.o: ../src/Saida/Estatisticas.h
+
 CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Testador/main.cpp.o: ../src/Eleicoes/Eleicao.h
 CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Testador/main.cpp.o: ../src/Eleicoes/candidato.h
 CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Testador/main.cpp.o: ../src/Eleicoes/partido.h
+CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Testador/main.cpp.o: ../src/Entrada/Leitor.h
+CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Testador/main.cpp.o: ../src/Saida/Estatisticas.h
 CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Testador/main.cpp.o: ../src/Testador/main.cpp
 

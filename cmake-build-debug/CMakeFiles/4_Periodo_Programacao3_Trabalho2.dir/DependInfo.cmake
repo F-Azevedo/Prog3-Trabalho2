@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Eleicoes/candidato.cpp" "/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/cmake-build-debug/CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Eleicoes/candidato.cpp.o"
   "/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Eleicoes/partido.cpp" "/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/cmake-build-debug/CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Eleicoes/partido.cpp.o"
   "/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Entrada/Leitor.cpp" "/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/cmake-build-debug/CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Entrada/Leitor.cpp.o"
+  "/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Saida/Estatisticas.cpp" "/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/cmake-build-debug/CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Saida/Estatisticas.cpp.o"
   "/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Testador/main.cpp" "/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/cmake-build-debug/CMakeFiles/4_Periodo_Programacao3_Trabalho2.dir/src/Testador/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

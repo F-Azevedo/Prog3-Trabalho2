@@ -106,6 +106,12 @@
 		<Unit filename="/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Entrada/Leitor.h">
 			<Option target="4_Periodo_Programacao3_Trabalho2"/>
 		</Unit>
+		<Unit filename="/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Saida/Estatisticas.cpp">
+			<Option target="4_Periodo_Programacao3_Trabalho2"/>
+		</Unit>
+		<Unit filename="/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Saida/Estatisticas.h">
+			<Option target="4_Periodo_Programacao3_Trabalho2"/>
+		</Unit>
 		<Unit filename="/home/fernando/CLionProjects/4-Periodo-Programacao3-Trabalho2/src/Testador/main.cpp">
 			<Option target="4_Periodo_Programacao3_Trabalho2"/>
 		</Unit>
