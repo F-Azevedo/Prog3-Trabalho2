@@ -3,6 +3,7 @@
 //
 
 #include "candidato.h"
+#include <algorithm>
 
 //Construtor de Candidato.
 Candidato::Candidato(int numero,
@@ -81,16 +82,22 @@ string Candidato::toString() {
     return retorno;
 }
 
-//Funções para comparar candidato.
-
-bool Candidato::operator==(const Candidato &) const {
-    return false;
+bool Candidato::operator<(const Candidato &outro) {
+    if(outro.votos == this->votos){
+        if(outro.getIdade() > this->getIdade())
+            return true;
+        else if(outro.getIdade() < this->getIdade())
+            return false;
+        return false;
+    }
+    return outro.votos < this->votos;
 }
 
-bool Candidato::operator>(const Candidato &) const {
-    return false;
-}
-
-bool Candidato::operator<(const Candidato &) const {
-    return false;
+bool Candidato::operator==(const Candidato &outro) {
+    if( this->nome == outro.nome &&
+        this->nome_urna == outro.nome_urna &&
+        this->numero == outro.numero)
+        return true;
+    else
+        return false;
 }

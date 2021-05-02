@@ -45,9 +45,8 @@ public:
     string simpleString(const string& sigla_partido);
     string toString();
 
-    bool operator==(const Candidato&) const;
-    bool operator>(const Candidato&) const;
-    bool operator<(const Candidato&) const;
+    bool operator<(const Candidato& outro);
+    bool operator==(const Candidato& outro);
 };
 
 #endif //INC_4_PERIODO_PROGRAMACAO3_TRABALHO2_CANDIDATO_H

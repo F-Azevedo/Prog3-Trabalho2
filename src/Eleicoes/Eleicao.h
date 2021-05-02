@@ -29,7 +29,7 @@ public:
     int get_total_votos_legenda() const;
     int get_total_votos_nominais() const;
     map<int, Partido>* getPartidos() const;
-    vector<Candidato>* getEleitos() const;
+    vector<Candidato>* getEleitos();
     vector<Candidato>* getCandidatos();
     void add_total_votos_legenda(int incremento);
     void add_total_votos_nominais(int incremento);

@@ -13,6 +13,8 @@ int main(int argc, char* argv[]){
 
     Leitor leitor;
     //Lê a data de realização da eleição.
+    cout << "Arquivo de candidatos " << arq_candidatos << endl;
+    cout << "Arquivo de partidos " << arq_partidos << endl;
     cout << "Data da eleição inicialmente " << data << endl;
     vector<int> data_eleicao = leitor.leData(data);
     //Cria a estrutura da classe eleição.
@@ -25,11 +27,11 @@ int main(int argc, char* argv[]){
     Estatisticas estatisticas;
 //    Imprime as estatísticas.
     estatisticas.imprimeNumVagas(eleicao);
-//    estatisticas.imprimeEleitos(eleicao);
-//    estatisticas.imprimeMaisVotados(eleicao);
-//    estatisticas.imprimePrejudicados(eleicao);
-//    estatisticas.imprimeBeneficiados(eleicao);
-//    estatisticas.imprimePartidosMaisVotados(eleicao);
+    estatisticas.imprimeEleitos(eleicao);
+    estatisticas.imprimeMaisVotados(eleicao);
+    estatisticas.imprimePrejudicados(eleicao);
+    estatisticas.imprimeBeneficiados(eleicao);
+    estatisticas.imprimePartidosMaisVotados(eleicao);
 //    estatisticas.imprimeMelhorPiorCandidatoPorPartido(eleicao);
     estatisticas.imprimeIdade(eleicao);
     estatisticas.imprimeSexo(eleicao);

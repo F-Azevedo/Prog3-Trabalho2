@@ -24,11 +24,11 @@ map<int, Partido>* Eleicao::getPartidos() const {
     return this->partidos;
 }
 
-vector<Candidato>* Eleicao::getEleitos() const{
+vector<Candidato>* Eleicao::getEleitos(){
     return this->eleitos;
 }
 
-vector<Candidato>* Eleicao::getCandidatos() {
+vector<Candidato>* Eleicao::getCandidatos(){
     return candidatos;
 }
 
@@ -55,10 +55,10 @@ void Eleicao::addCandidatoEleicao(const Candidato& candidato) {
     this->add_total_votos_nominais(candidato.getVotos());
 
     //Determina a qual partido o candidato pertence.
-    Partido aux = this->partidos->find(candidato.getNumPartido())->second;
+    Partido* aux = &this->partidos->at(candidato.getNumPartido());
 
     //Adiciona o candidato ao seu respectivo partido.
-    aux.add_CandidatoPartido(candidato);
+    aux->add_CandidatoPartido(candidato);
 }
 
 void Eleicao::addPartidoEleicao(int num_partido, const Partido& partido) {

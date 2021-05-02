@@ -37,8 +37,10 @@ public:
     string toString();
     string simplesString();
 
-    bool operator==(const Partido&) const;
-    bool operator>(const Partido&) const;
     bool operator<(const Partido&) const;
+};
+
+struct compare{
+    bool operator()(Partido& esse, Partido& outro);
 };
 #endif //INC_4_PERIODO_PROGRAMACAO3_TRABALHO2_PARTIDO_H

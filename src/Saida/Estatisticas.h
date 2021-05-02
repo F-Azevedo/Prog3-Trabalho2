@@ -15,15 +15,15 @@ class Estatisticas
 {
 public:
     void imprimeNumVagas(const Eleicao& e);
-    void imprimeEleitos(const Eleicao& e);
-    void imprimeMaisVotados(const Eleicao& e);
-    void imprimePrejudicados(const Eleicao& e);
-    void imprimeBeneficiados(const Eleicao& e);
-    void imprimePartidosMaisVotados(const Eleicao& e);
-    void imprimeMelhorPiorCandidatoPorPartido(const Eleicao& e);
-    void imprimeIdade(const Eleicao& e);
-    void imprimeSexo(const Eleicao& e);
-    void imprimeTotalVotos(const Eleicao& e);
+    void imprimeEleitos(Eleicao& e);
+    void imprimeMaisVotados(Eleicao& e);
+    void imprimePrejudicados(Eleicao& e);
+    void imprimeBeneficiados(Eleicao& e);
+    void imprimePartidosMaisVotados(Eleicao& e);
+    void imprimeMelhorPiorCandidatoPorPartido(Eleicao& e);
+    void imprimeIdade(Eleicao& e);
+    void imprimeSexo(Eleicao& e);
+    void imprimeTotalVotos(Eleicao& e);
 };
 
 #endif //INC_4_PERIODO_PROGRAMACAO3_TRABALHO2_ESTATISTICAS_H
