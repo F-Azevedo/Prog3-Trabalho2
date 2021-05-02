@@ -6,6 +6,11 @@
 #define INC_4_PERIODO_PROGRAMACAO3_TRABALHO2_CANDIDATO_H
 
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <vector>
+
 using namespace std;
 
 class Candidato
@@ -27,7 +32,7 @@ public:
               string& nome,
               string& nome_urna,
               string& nascimento,
-              string& dia_da_eleicao,
+              vector<int>& data_eleicao,
               char sexo);
 
     bool foiEleito() const;

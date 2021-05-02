@@ -8,11 +8,23 @@
 
 #include <exception>
 
-string Leitor::leData(const string& dataStr) {
-    return string();
+vector<int> Leitor::leData(const string& dataStr) {
+    //Data da eleicao.
+    stringstream aux(dataStr);
+    string info;
+
+    vector<int> data;
+
+    getline(aux, info, '/');
+    data.push_back(stoi(info));
+    getline(aux, info, '/');
+    data.push_back(stoi(info));
+    getline(aux, info, '/');
+    data.push_back(stoi(info));
+    return data;
 }
 
-Candidato* Leitor::leCandidato(const string& linha, string& dia_eleicao) {
+Candidato* Leitor::leCandidato(const string& linha, vector<int> &dia_eleicao) {
 
     stringstream aux(linha);
     string info;
@@ -38,13 +50,15 @@ Candidato* Leitor::leCandidato(const string& linha, string& dia_eleicao) {
     getline(aux, info, ',');
     string nascimento = info;
 
+    //Para pegar o válido;
+    getline(aux, info, ',');
+
     getline(aux, info, ',');
     int numero_partido = stoi(info);
-
     return new Candidato(numero, votos, numero_partido, situacao, nome_candidato, nome_urna, nascimento, dia_eleicao, sexo);
 }
 
-void Leitor::leTodosCandidatos(string& nome_arq_entrada, string& dia_eleicao, Eleicao& eleicao) {
+void Leitor::leTodosCandidatos(string& nome_arq_entrada, vector<int>& dia_eleicao, Eleicao& eleicao) {
     //Cria o scanner e abre o arquivo.
     ifstream partidos(nome_arq_entrada);
     string linha;
@@ -53,12 +67,10 @@ void Leitor::leTodosCandidatos(string& nome_arq_entrada, string& dia_eleicao, El
     getline(partidos, linha);
 
     while(getline(partidos, linha)){
-
         //Checa se o candidato é válido, caso não seja ignora.
         if (linha.find("Válido") == string::npos ) continue;
 
         Candidato* novo_candidato = leCandidato(linha, dia_eleicao);
-
         eleicao.addCandidatoEleicao(*novo_candidato);
     }
 }
@@ -71,7 +83,6 @@ Partido* Leitor::lePartido(const string& linha) {
 
     while(getline(aux, inf, ',')){
         informacoes.push_back(inf);
-        cout << inf << endl;
     }
 
     //Lê as informações, cria e retorna um partido.

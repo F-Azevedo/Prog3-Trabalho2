@@ -4,11 +4,11 @@
 
 #include "Eleicao.h"
 
-Eleicao::Eleicao(string& dia) {
+Eleicao::Eleicao(vector<int>& dia) {
     this->data = dia;
 }
 
-int Eleicao::qtdEleitos() {
+int Eleicao::qtdEleitos() const {
     return (int) this->eleitos->size();
 }
 
@@ -20,11 +20,11 @@ int Eleicao::get_total_votos_nominais() const {
     return this->total_votos_nominais;
 }
 
-map<int, Partido>* Eleicao::getPartidos() {
+map<int, Partido>* Eleicao::getPartidos() const {
     return this->partidos;
 }
 
-vector<Candidato>* Eleicao::getEleitos() {
+vector<Candidato>* Eleicao::getEleitos() const{
     return this->eleitos;
 }
 

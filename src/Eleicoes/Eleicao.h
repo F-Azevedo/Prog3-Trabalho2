@@ -18,18 +18,18 @@ class Eleicao
 {
     int total_votos_nominais = 0;
     int total_votos_legenda = 0;
-    string data;
+    vector<int> data;
     map<int, Partido>* partidos   = new map<int, Partido>();
     vector<Candidato>* eleitos    = new vector<Candidato>();
     vector<Candidato>* candidatos = new vector<Candidato>();
 public:
-    Eleicao(string& dia);
+    Eleicao(vector<int>& dia);
 
-    int qtdEleitos();
+    int qtdEleitos() const;
     int get_total_votos_legenda() const;
     int get_total_votos_nominais() const;
-    map<int, Partido>* getPartidos();
-    vector<Candidato>* getEleitos();
+    map<int, Partido>* getPartidos() const;
+    vector<Candidato>* getEleitos() const;
     vector<Candidato>* getCandidatos();
     void add_total_votos_legenda(int incremento);
     void add_total_votos_nominais(int incremento);

@@ -17,9 +17,9 @@ using namespace std;
 class Leitor
 {
 public:
-    string leData(const string& dataStr);
-    Candidato* leCandidato(const string& linha, string& dia_eleicao);
-    void leTodosCandidatos(string& nome_arq_entrada, string& dia_eleicao, Eleicao& eleicao);
+    vector<int> leData(const string& dataStr);
+    Candidato* leCandidato(const string& linha, vector<int>& dia_eleicao);
+    void leTodosCandidatos(string& nome_arq_entrada, vector<int>& dia_eleicao, Eleicao& eleicao);
     Partido* lePartido(const string& linha);
     void leTodosPartidos(const string& nome_arq_entrada, Eleicao& eleicao);
 };

@@ -12,7 +12,7 @@ Candidato::Candidato(int numero,
                      string& nome,
                      string& nome_urna,
                      string& nascimento,
-                     string& dia_da_eleicao,
+                     vector<int>& data_eleicao,
                      char sexo){
     this->nome = nome;
     this->nome_urna = nome_urna;
@@ -22,7 +22,25 @@ Candidato::Candidato(int numero,
     this->sexo = sexo;
     this->votos = votos;
     this->nasc = nascimento;
-    this->idade = stoi(dia_da_eleicao) - stoi(nascimento);
+
+    //Data do candidato.
+    stringstream aux(nascimento);
+    string info;
+
+    getline(aux, info, '/');
+    int dia_nas = stoi(info);
+    getline(aux, info, '/');
+    int mes_nas = stoi(info);
+    getline(aux, info, '/');
+    int ano_nas = stoi(info);
+
+    this->idade = data_eleicao[2] - ano_nas;
+    if(data_eleicao[1] < mes_nas)
+        this->idade--;
+    else if(data_eleicao[1] == mes_nas){
+        if(data_eleicao[0] < dia_nas)
+            this->idade--;
+    }
 }
 
 bool Candidato::foiEleito() const {
