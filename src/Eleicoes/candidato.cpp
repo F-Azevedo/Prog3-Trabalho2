@@ -50,6 +50,10 @@ bool Candidato::foiEleito() const {
 
 //Getters de Candidato.
 
+char Candidato::getSexo() const {
+    return this->sexo;
+}
+
 int Candidato::getVotos() const {
     return this->votos;
 }
@@ -58,31 +62,32 @@ int Candidato::getIdade() const {
     return this->idade;
 }
 
+int Candidato::getNumero() const {
+    return this->numero;
+}
+
 int Candidato::getNumPartido() const {
     return this->num_partido;
 }
 
-char Candidato::getSexo() const {
-    return this->sexo;
+string Candidato::getNome() const {
+    return this->nome;
+}
+
+string Candidato::getNomeUrna() const {
+    return this->nome_urna;
 }
 
 //Funções para imprimir o candidato.
 
-string Candidato::simpleString(const string& sigla_partido) {
-    string retorno = nome + " / " + nome_urna + " (" + sigla_partido + ", " + to_string(votos);
-    if (votos > 1) retorno += " votos)";
-    else retorno += " voto)";
-    return retorno;
-}
+//string Candidato::simpleString(const string& sigla_partido) {
+//    string retorno = nome + " / " + nome_urna + " (" + sigla_partido + ", " + to_string(votos);
+//    if (votos > 1) retorno += " votos)";
+//    else retorno += " voto)";
+//    return retorno;
+//}
 
-string Candidato::toString() {
-    string retorno =  nome_urna + " (" + to_string(numero) + ", " + to_string(votos);
-    if (votos > 1) retorno += " votos)";
-    else retorno += " voto)";
-    return retorno;
-}
-
-bool Candidato::operator<(const Candidato &outro) {
+bool Candidato::operator<(const Candidato &outro) const {
     if(outro.votos == this->votos){
         if(outro.getIdade() > this->getIdade())
             return true;
@@ -93,10 +98,10 @@ bool Candidato::operator<(const Candidato &outro) {
     return outro.votos < this->votos;
 }
 
-bool Candidato::operator==(const Candidato &outro) {
-    if( this->nome == outro.nome &&
-        this->nome_urna == outro.nome_urna &&
-        this->numero == outro.numero)
+bool Candidato::operator==(const Candidato &outro) const {
+    if( this->getNome() == outro.getNome() &&
+        this->getNomeUrna() == outro.getNomeUrna() &&
+        this->getNumero() == outro.getNumero())
         return true;
     else
         return false;

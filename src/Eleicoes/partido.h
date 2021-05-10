@@ -27,15 +27,14 @@ public:
             string& sigla_partido);
 
     int votosTotais() const;
+    int getQtdEleitos() const;
     int getVotos_legenda() const;
+    int getVotos_nominais() const;
     int getNumero_partido() const;
-    string getSigla_partido();
+    string getSigla_partido() const;
     vector<Candidato>* getCandidatos();
     void add_Votos_nominais(int incremento);
     void add_CandidatoPartido(const Candidato& candidato);
-
-    string toString();
-    string simplesString();
 
     bool operator<(const Partido&) const;
 };

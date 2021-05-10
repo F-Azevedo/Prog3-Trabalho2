@@ -40,13 +40,15 @@ public:
     char getSexo() const;
     int getVotos() const;
     int getIdade() const;
+    int getNumero() const;
     int getNumPartido() const;
+    string getNome() const;
+    string getNomeUrna() const;
 
-    string simpleString(const string& sigla_partido);
-    string toString();
+//    string simpleString(const string& sigla_partido);
 
-    bool operator<(const Candidato& outro);
-    bool operator==(const Candidato& outro);
+    bool operator<(const Candidato& outro) const;
+    bool operator==(const Candidato& outro) const;
 };
 
 #endif //INC_4_PERIODO_PROGRAMACAO3_TRABALHO2_CANDIDATO_H
