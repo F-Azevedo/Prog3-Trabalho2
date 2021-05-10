@@ -112,7 +112,7 @@ void Leitor::leTodosPartidos(const string& nome_arq_entrada, Eleicao& eleicao) {
         Partido* novo_partido = lePartido(linha);
 
         //Adicona o partido ao conjunto de partidos da eleição.
-        eleicao.addPartidoEleicao(novo_partido->getNumero_partido(), *novo_partido);
+        eleicao.addPartidoEleicao(novo_partido->getNumero_partido(), novo_partido);
 
     }
 }

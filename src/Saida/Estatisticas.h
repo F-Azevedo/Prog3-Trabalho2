@@ -8,6 +8,8 @@
 #include <iostream>
 
 #include "../Eleicoes/Eleicao.h"
+#include "../Eleicoes/comparaPartido.h"
+#include "../Eleicoes/comparaCandidato.h"
 #include "../Eleicoes/comparaMaisVotado.h"
 
 using namespace std;

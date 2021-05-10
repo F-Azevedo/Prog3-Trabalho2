@@ -55,10 +55,6 @@ void Partido::add_CandidatoPartido(Candidato* candidato) {
     if(candidato->foiEleito())   this->qtdCandidatosEleitos++;
 }
 
-bool Partido::operator<(const Partido & outro) const {
-    return outro.votosTotais() < this->votosTotais();
-}
-
 Partido::~Partido() {
     delete this->candidatos;
 }

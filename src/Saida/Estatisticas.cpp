@@ -7,39 +7,39 @@
 
 // Funções para impressão de Candidato. -----------------------------------------------------------------
 
-ostream& operator<<(ostream& strm, const Candidato* c){
-    string retorno =  c->getNomeUrna() + " (" + to_string(c->getNumero()) + ", " + to_string(c->getVotos());
-    if (c->getVotos() > 1) retorno += " votos)";
+ostream& operator<<(ostream& strm, const Candidato& c){
+    string retorno =  c.getNomeUrna() + " (" + to_string(c.getNumero()) + ", " + to_string(c.getVotos());
+    if (c.getVotos() > 1) retorno += " votos)";
     else retorno += " voto)";
     return strm << retorno;
 }
 
-string simpleStringCandidato(const Candidato* c, const string& sigla_partido) {
-    string retorno = c->getNome() + " / " + c->getNomeUrna() + " (" + sigla_partido + ", " + to_string(c->getVotos());
-    if (c->getVotos() > 1) retorno += " votos)";
+string simpleStringCandidato(const Candidato& c, const string& sigla_partido) {
+    string retorno = c.getNome() + " / " + c.getNomeUrna() + " (" + sigla_partido + ", " + to_string(c.getVotos());
+    if (c.getVotos() > 1) retorno += " votos)";
     else retorno += " voto)";
     return retorno;
 }
 
 //Funções para impressão de partido. --------------------------------------------------------------------
 
-ostream& operator<<(ostream& strm, const Partido* p){
-    return strm << p->getSigla_partido() + " - " + to_string(p->getNumero_partido());
+ostream& operator<<(ostream& strm, const Partido& p){
+    return strm << p.getSigla_partido() + " - " + to_string(p.getNumero_partido());
 }
 
-string simplesStringPartido(const Partido* p) {
-    string s = p->getSigla_partido() + " - " + to_string(p->getNumero_partido()) + ", " + to_string(p->votosTotais());
-    if(p->votosTotais() == 0)
-        s += " voto (" + to_string(p->getVotos_nominais());
+string simplesStringPartido(const Partido& p) {
+    string s = p.getSigla_partido() + " - " + to_string(p.getNumero_partido()) + ", " + to_string(p.votosTotais());
+    if(p.votosTotais() == 0)
+        s += " voto (" + to_string(p.getVotos_nominais());
     else
-        s += " votos (" + to_string(p->getVotos_nominais());
+        s += " votos (" + to_string(p.getVotos_nominais());
 
-    if(p->getVotos_nominais() == 0)
-        s += " nominal e " + to_string(p->getVotos_legenda()) + " de legenda), " + to_string(p->getQtdEleitos());
+    if(p.getVotos_nominais() == 0)
+        s += " nominal e " + to_string(p.getVotos_legenda()) + " de legenda), " + to_string(p.getQtdEleitos());
     else
-        s += " nominais e " + to_string(p->getVotos_legenda()) + " de legenda), " + to_string(p->getQtdEleitos());
+        s += " nominais e " + to_string(p.getVotos_legenda()) + " de legenda), " + to_string(p.getQtdEleitos());
 
-    if(p->getQtdEleitos() < 2)
+    if(p.getQtdEleitos() < 2)
         s += " candidato eleito";
     else
         s += " candidatos eleitos";
@@ -58,11 +58,11 @@ void Estatisticas::imprimeEleitos(Eleicao& e) {
 
     cout << "Vereadores eleitos:" << endl;
 
-    sort(e.getEleitos()->begin(), e.getEleitos()->end());
+    sort(e.getEleitos()->begin(), e.getEleitos()->end(), comparaCandidato());
 
     for (Candidato* eleito : *e.getEleitos()) {
         Partido* aux = e.getPartidos()->find(eleito->getNumPartido())->second;
-        cout << (++i) << " - " << simpleStringCandidato(eleito, aux->getSigla_partido()) << endl;
+        cout << (++i) << " - " << simpleStringCandidato(*eleito, aux->getSigla_partido()) << endl;
     }
     cout << endl;
 }
@@ -72,11 +72,11 @@ void Estatisticas::imprimeMaisVotados(Eleicao& e) {
 
     cout << "Candidatos mais votados (em ordem decrescente de votação e respeitando número de vagas):" << endl;
 
-    sort(e.getCandidatos()->begin(), e.getCandidatos()->end());
+    sort(e.getCandidatos()->begin(), e.getCandidatos()->end(), comparaCandidato());
 
     for (Candidato* maior: *e.getCandidatos()){
         Partido* aux = e.getPartidos()->find(maior->getNumPartido())->second;
-        cout << (++i) << " - " + simpleStringCandidato(maior, aux->getSigla_partido()) << endl;
+        cout << (++i) << " - " + simpleStringCandidato(*maior, aux->getSigla_partido()) << endl;
         if (i >= e.qtdEleitos()) break;
     }
     cout << endl;
@@ -96,7 +96,7 @@ void Estatisticas::imprimePrejudicados(Eleicao& e) {
     for(Candidato* i : *e.getCandidatos()){
         if (find(eleitos->begin(), eleitos->end(), i) == eleitos->end()) {
             Partido* aux = e.getPartidos()->find(i->getNumPartido())->second;
-            cout << (pos) << " - " + simpleStringCandidato(i, aux->getSigla_partido()) << endl;
+            cout << (pos) << " - " + simpleStringCandidato(*i, aux->getSigla_partido()) << endl;
         }
         pos++;
         if(pos > e.qtdEleitos()) break;
@@ -121,7 +121,7 @@ void Estatisticas::imprimeBeneficiados(Eleicao& e) {
             qtdEleitos++;
             if(pos > totalEleitos){
                 Partido* aux = e.getPartidos()->find(i->getNumPartido())->second;
-                cout << (pos) << " - " + simpleStringCandidato(i, aux->getSigla_partido()) << endl;
+                cout << (pos) << " - " + simpleStringCandidato(*i, aux->getSigla_partido()) << endl;
             }
         }
         if(qtdEleitos == totalEleitos)  break;
@@ -145,10 +145,10 @@ void Estatisticas::imprimePartidosMaisVotados(Eleicao& e) {
     }
 
     // Ordena a lista a partir do numero de votos totais do partido de forma decrescente.
-    sort(partidos.begin(), partidos.end());
+    sort(partidos.begin(), partidos.end(), comparaPartido());
 
     for(Partido* p : partidos){
-        cout << ++i << " - " << simplesStringPartido(p) << endl;
+        cout << ++i << " - " << simplesStringPartido(*p) << endl;
     }
     cout << endl;
 }
@@ -166,16 +166,17 @@ void Estatisticas::imprimeMelhorPiorCandidatoPorPartido(Eleicao& e) {
 
     // Ordena os valores no map e insere na lista.
     for(; it != end; ++it) {
-        sort(it->second->getCandidatos()->begin(), it->second->getCandidatos()->end());
+        sort(it->second->getCandidatos()->begin(), it->second->getCandidatos()->end(), comparaCandidato());
         partidos.push_back(it->second);
     }
 
+    sort(partidos.begin(), partidos.end(), comparaPartido());
     // Ordena a lista de partidos a partir do numero de votos do candidato com mais votos de forma decrescente.
     sort(partidos.begin(), partidos.end(), comparaMaisVotado());
 
     for(Partido* p: partidos){
         if (p->getCandidatos()->empty() || p->votosTotais() <= 0) continue;
-        cout << ++i << " - " << p << ", " << p->getCandidatos()->front() << " / " << p->getCandidatos()->back() << endl;
+        cout << ++i << " - " << *p << ", " << *p->getCandidatos()->front() << " / " << *p->getCandidatos()->back() << endl;
     }
     cout << endl;
 }
@@ -185,7 +186,7 @@ void Estatisticas::imprimeIdade(Eleicao& e) {
     int menor30 = 0, menor40 = 0, menor50 = 0, menor60 = 0, maior60 = 0;
 
     //Verifica a quantidade de vereadores eleitos em cada faixa etária.
-    for (Candidato* i : *e.getEleitos()) {
+    for (const Candidato* i : *e.getEleitos()) {
         int idade = i->getIdade();
         if (idade < 30) menor30++;
         else if (idade < 40) menor40++;
@@ -210,7 +211,7 @@ void Estatisticas::imprimeSexo(Eleicao& e) {
     int fem = 0, masc = 0;
 
     //Verifica quantos dos vereadores eleitos são homens e quantos são mulheres.
-    for (Candidato* i : *e.getEleitos()) {
+    for (const Candidato* i : *e.getEleitos()) {
         if (i->getSexo() == 'F')
             fem++;
         else

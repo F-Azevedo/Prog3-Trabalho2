@@ -45,7 +45,7 @@ public:
     string getNome() const;
     string getNomeUrna() const;
 
-    bool operator<(const Candidato& outro) const;
+//    bool operator<(const Candidato& outro) const;
     bool operator==(const Candidato& outro) const;
 
     ~Candidato() = default;

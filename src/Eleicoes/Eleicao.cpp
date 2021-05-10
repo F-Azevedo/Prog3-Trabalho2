@@ -61,11 +61,11 @@ void Eleicao::addCandidatoEleicao(Candidato* candidato) {
     aux->add_CandidatoPartido(candidato);
 }
 
-void Eleicao::addPartidoEleicao(int num_partido, Partido& partido) {
-    this->partidos->insert(make_pair(num_partido, &partido));
+void Eleicao::addPartidoEleicao(int num_partido, Partido* partido) {
+    this->partidos->insert(make_pair(num_partido, partido));
 
     //Adicoina os votos de legenda recebidos pelo partido ao total de votos de legenda da eleição.
-    this->add_total_votos_legenda(partido.getVotos_legenda());
+    this->add_total_votos_legenda(partido->getVotos_legenda());
 }
 
 Eleicao::~Eleicao() {

@@ -11,8 +11,11 @@ add_executable(4_Periodo_Programacao3_Trabalho2
         src/Eleicoes/partido.h
         src/Eleicoes/Eleicao.cpp
         src/Eleicoes/Eleicao.h
+        src/Eleicoes/comparaPartido.h
+        src/Eleicoes/comparaCandidato.h
         src/Eleicoes/comparaMaisVotado.h
         src/Entrada/Leitor.cpp
         src/Entrada/Leitor.h
         src/Saida/Estatisticas.cpp
-        src/Saida/Estatisticas.h)
+        src/Saida/Estatisticas.h
+)

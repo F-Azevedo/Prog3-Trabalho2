@@ -35,7 +35,7 @@ public:
     void add_total_votos_nominais(int incremento);
     void adicionaEleito(Candidato* candidato);
     void addCandidatoEleicao(Candidato* candidato);
-    void addPartidoEleicao(int num_partido, Partido& partido);
+    void addPartidoEleicao(int num_partido, Partido* partido);
 
     ~Eleicao();
 };

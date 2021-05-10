@@ -78,16 +78,16 @@ string Candidato::getNomeUrna() const {
     return this->nome_urna;
 }
 
-bool Candidato::operator<(const Candidato &outro) const {
-    if(outro.votos == this->votos){
-        if(outro.getIdade() > this->getIdade())
-            return true;
-        else if(outro.getIdade() < this->getIdade())
-            return false;
-        return false;
-    }
-    return outro.votos < this->votos;
-}
+//bool Candidato::operator<(const Candidato &outro) const {
+//    if(outro.votos == this->votos){
+//        if(outro.getIdade() > this->getIdade())
+//            return true;
+//        else if(outro.getIdade() < this->getIdade())
+//            return false;
+//        return false;
+//    }
+//    return outro.votos < this->votos;
+//}
 
 bool Candidato::operator==(const Candidato &outro) const {
     if( this->getNome() == outro.getNome() &&

@@ -36,7 +36,7 @@ public:
     void add_Votos_nominais(int incremento);
     void add_CandidatoPartido(Candidato* candidato);
 
-    bool operator<(const Partido&) const;
+//    bool operator<(const Partido&) const;
 
     ~Partido();
 };
