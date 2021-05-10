@@ -78,15 +78,6 @@ string Candidato::getNomeUrna() const {
     return this->nome_urna;
 }
 
-//Funções para imprimir o candidato.
-
-//string Candidato::simpleString(const string& sigla_partido) {
-//    string retorno = nome + " / " + nome_urna + " (" + sigla_partido + ", " + to_string(votos);
-//    if (votos > 1) retorno += " votos)";
-//    else retorno += " voto)";
-//    return retorno;
-//}
-
 bool Candidato::operator<(const Candidato &outro) const {
     if(outro.votos == this->votos){
         if(outro.getIdade() > this->getIdade())

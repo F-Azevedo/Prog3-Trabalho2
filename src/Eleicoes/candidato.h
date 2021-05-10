@@ -45,10 +45,10 @@ public:
     string getNome() const;
     string getNomeUrna() const;
 
-//    string simpleString(const string& sigla_partido);
-
     bool operator<(const Candidato& outro) const;
     bool operator==(const Candidato& outro) const;
+
+    ~Candidato() = default;
 };
 
 #endif //INC_4_PERIODO_PROGRAMACAO3_TRABALHO2_CANDIDATO_H

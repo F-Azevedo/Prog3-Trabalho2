@@ -77,7 +77,7 @@ void Leitor::leTodosCandidatos(string& nome_arq_entrada, vector<int>& dia_eleica
         if (linha.find("Válido") == string::npos ) continue;
 
         Candidato* novo_candidato = leCandidato(linha, dia_eleicao);
-        eleicao.addCandidatoEleicao(*novo_candidato);
+        eleicao.addCandidatoEleicao(novo_candidato);
     }
 }
 
