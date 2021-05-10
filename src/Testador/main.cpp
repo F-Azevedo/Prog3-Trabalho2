@@ -7,6 +7,9 @@
 #include "../Saida/Estatisticas.h"
 
 int main(int argc, char* argv[]){
+    locale brasilLocale("pt_BR.utf8");
+    cout.imbue(brasilLocale);
+
     string arq_candidatos   = argv[1],
             arq_partidos 	= argv[2],
             data            = argv[3];
@@ -32,7 +35,7 @@ int main(int argc, char* argv[]){
     estatisticas.imprimePrejudicados(eleicao);
     estatisticas.imprimeBeneficiados(eleicao);
     estatisticas.imprimePartidosMaisVotados(eleicao);
-//    estatisticas.imprimeMelhorPiorCandidatoPorPartido(eleicao);
+    estatisticas.imprimeMelhorPiorCandidatoPorPartido(eleicao);
     estatisticas.imprimeIdade(eleicao);
     estatisticas.imprimeSexo(eleicao);
     estatisticas.imprimeTotalVotos(eleicao);

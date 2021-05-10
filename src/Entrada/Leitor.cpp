@@ -11,6 +11,8 @@
 vector<int> Leitor::leData(const string& dataStr) {
     //Data da eleicao.
     stringstream aux(dataStr);
+    locale brasilLocale("pt_BR.utf8");
+    aux.imbue(brasilLocale);
     string info;
 
     vector<int> data;
@@ -27,6 +29,8 @@ vector<int> Leitor::leData(const string& dataStr) {
 Candidato* Leitor::leCandidato(const string& linha, vector<int> &dia_eleicao) {
 
     stringstream aux(linha);
+    locale brasilLocale("pt_BR.utf8");
+    aux.imbue(brasilLocale);
     string info;
 
     getline(aux, info, ',');
@@ -60,13 +64,15 @@ Candidato* Leitor::leCandidato(const string& linha, vector<int> &dia_eleicao) {
 
 void Leitor::leTodosCandidatos(string& nome_arq_entrada, vector<int>& dia_eleicao, Eleicao& eleicao) {
     //Cria o scanner e abre o arquivo.
-    ifstream partidos(nome_arq_entrada);
+    ifstream candidatos(nome_arq_entrada);
+    locale brasilLocale("pt_BR.utf8");
+    candidatos.imbue(brasilLocale);
     string linha;
 
     // Pega a linha de cabeçalho
-    getline(partidos, linha);
+    getline(candidatos, linha);
 
-    while(getline(partidos, linha)){
+    while(getline(candidatos, linha)){
         //Checa se o candidato é válido, caso não seja ignora.
         if (linha.find("Válido") == string::npos ) continue;
 
@@ -80,6 +86,8 @@ Partido* Leitor::lePartido(const string& linha) {
     string inf;
 
     stringstream aux(linha);
+    locale brasilLocale("pt_BR.utf8");
+    aux.imbue(brasilLocale);
 
     while(getline(aux, inf, ',')){
         informacoes.push_back(inf);
@@ -92,6 +100,8 @@ Partido* Leitor::lePartido(const string& linha) {
 void Leitor::leTodosPartidos(const string& nome_arq_entrada, Eleicao& eleicao) {
     //Cria o scanner e abre o arquivo.
     ifstream partidos(nome_arq_entrada);
+    locale brasilLocale("pt_BR.utf8");
+    partidos.imbue(brasilLocale);
     string linha;
 
     // Pega a linha de cabeçalho
