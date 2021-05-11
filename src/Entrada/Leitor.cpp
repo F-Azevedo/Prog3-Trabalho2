@@ -64,20 +64,31 @@ Candidato* Leitor::leCandidato(const string& linha, vector<int> &dia_eleicao) {
 
 void Leitor::leTodosCandidatos(string& nome_arq_entrada, vector<int>& dia_eleicao, Eleicao& eleicao) {
     //Cria o scanner e abre o arquivo.
-    ifstream candidatos(nome_arq_entrada);
+    ifstream candidatos;
     locale brasilLocale("pt_BR.utf8");
     candidatos.imbue(brasilLocale);
     string linha;
 
-    // Pega a linha de cabeçalho
-    getline(candidatos, linha);
+    candidatos.exceptions (std::ifstream::badbit | std::ifstream::failbit | std::ifstream::eofbit);
+    try{
+        candidatos.open(nome_arq_entrada);
 
-    while(getline(candidatos, linha)){
-        //Checa se o candidato é válido, caso não seja ignora.
-        if (linha.find("Válido") == string::npos ) continue;
+        // Pega a linha de cabeçalho
+        getline(candidatos, linha);
 
-        Candidato* novo_candidato = leCandidato(linha, dia_eleicao);
-        eleicao.addCandidatoEleicao(novo_candidato);
+        while(getline(candidatos, linha)){
+            //Checa se o candidato é válido, caso não seja ignora.
+            if (linha.find("Válido") == string::npos ) continue;
+
+            Candidato* novo_candidato = leCandidato(linha, dia_eleicao);
+            eleicao.addCandidatoEleicao(novo_candidato);
+        }
+    }
+    catch(ifstream::failure e){
+        if(!candidatos.eof()){
+            cerr << "Erro ao abrir/ler/fechar o arquivo" << nome_arq_entrada << endl;
+            exit(1);
+        }
     }
 }
 
@@ -99,20 +110,31 @@ Partido* Leitor::lePartido(const string& linha) {
 
 void Leitor::leTodosPartidos(const string& nome_arq_entrada, Eleicao& eleicao) {
     //Cria o scanner e abre o arquivo.
-    ifstream partidos(nome_arq_entrada);
+    ifstream partidos;
     locale brasilLocale("pt_BR.utf8");
     partidos.imbue(brasilLocale);
     string linha;
 
-    // Pega a linha de cabeçalho
-    getline(partidos, linha);
+    partidos.exceptions (std::ifstream::badbit | std::ifstream::failbit | std::ifstream::eofbit);
+    try{
+        partidos.open(nome_arq_entrada);
 
-    while(getline(partidos, linha)){
+        // Pega a linha de cabeçalho
+        getline(partidos, linha);
 
-        Partido* novo_partido = lePartido(linha);
+        while(getline(partidos, linha)){
+            Partido* novo_partido = lePartido(linha);
 
-        //Adicona o partido ao conjunto de partidos da eleição.
-        eleicao.addPartidoEleicao(novo_partido->getNumero_partido(), novo_partido);
+            //Adicona o partido ao conjunto de partidos da eleição.
+            eleicao.addPartidoEleicao(novo_partido->getNumero_partido(), novo_partido);
 
+        }
+        partidos.close();
+    }
+    catch(ifstream::failure e){
+        if(!partidos.eof()){
+            cerr << "Erro ao abrir/ler/fechar o arquivo" << nome_arq_entrada << endl;
+            exit(1);
+        }
     }
 }
