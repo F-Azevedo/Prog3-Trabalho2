@@ -51,6 +51,7 @@ string simplesStringPartido(const Partido& p) {
 
 void Estatisticas::imprimeNumVagas(const Eleicao& e) {
     cout << "Número de vagas: " << e.qtdEleitos() << endl;
+    cout << endl;
 }
 
 void Estatisticas::imprimeEleitos(Eleicao& e) {
@@ -198,11 +199,11 @@ void Estatisticas::imprimeIdade(Eleicao& e) {
     cout.precision(2);
 
     cout << "Eleitos, por faixa etária (na data da eleição):" << endl << fixed;
-    cout << "\t  Idade < 30: "   << menor30 << " (" << ((float)menor30 / (float)total) * 100 << "%)" << endl << fixed;
+    cout << "      Idade < 30: " << menor30 << " (" << ((float)menor30 / (float)total) * 100 << "%)" << endl << fixed;
     cout << "30 <= Idade < 40: " << menor40 << " (" << ((float)menor40 / (float)total) * 100 << "%)" << endl << fixed;
     cout << "40 <= Idade < 50: " << menor50 << " (" << ((float)menor50 / (float)total) * 100 << "%)" << endl << fixed;
     cout << "50 <= Idade < 60: " << menor60 << " (" << ((float)menor60 / (float)total) * 100 << "%)" << endl << fixed;
-    cout << "60 <= Idade\t\t: "  << maior60 << " (" << ((float)maior60 / (float)total) * 100 << "%)" << endl << fixed;
+    cout << "60 <= Idade     : " << maior60 << " (" << ((float)maior60 / (float)total) * 100 << "%)" << endl << fixed;
     cout << endl;
 }
 
@@ -219,8 +220,8 @@ void Estatisticas::imprimeSexo(Eleicao& e) {
     }
 
     cout << "Eleitos, por sexo:" << endl;
-    cout << "Feminino:\t"  << fem  << " (" << ((float)fem / (float)total) * 100 << "%)" << endl << fixed;
-    cout << "Masculino:\t" << masc << " (" <<((float)masc / (float)total) * 100 << "%)" << endl << fixed;
+    cout << "Feminino:  " << fem  << " (" << ((float)fem / (float)total) * 100 << "%)" << endl << fixed;
+    cout << "Masculino: " << masc << " (" <<((float)masc / (float)total) * 100 << "%)" << endl << fixed;
     cout << endl;
 }
 
@@ -229,7 +230,8 @@ void Estatisticas::imprimeTotalVotos(Eleicao& e) {
     int nominal = e.get_total_votos_nominais();
     int total = legenda + nominal;
 
-    cout << "Total de votos válidos: \t"   << total << endl;
-    cout << "Total de votos nominais:\t"   << nominal << " (" << ((float)nominal / (float)total) * 100 << "%)" << endl << fixed;
-    cout << "Total de votos de Legenda:\t" << legenda << " (" << ((float)legenda / (float)total) * 100 << "%)" << endl << fixed;
+    cout << "Total de votos válidos:    " << total << endl;
+    cout << "Total de votos nominais:   " << nominal << " (" << ((float)nominal / (float)total) * 100 << "%)" << endl << fixed;
+    cout << "Total de votos de Legenda: " << legenda << " (" << ((float)legenda / (float)total) * 100 << "%)" << endl << fixed;
+    cout << endl;
 }
