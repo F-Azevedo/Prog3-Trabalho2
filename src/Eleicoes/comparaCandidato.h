@@ -12,9 +12,9 @@ class comparaCandidato
 public:
     inline bool operator()(Candidato* esse, Candidato* outro) {
         if(outro->getVotos() == esse->getVotos()){
-            if(outro->getIdade() > esse->getIdade())
+            if(outro->getIdade() < esse->getIdade())
                 return true;
-            else if(outro->getIdade() < esse->getIdade())
+            else if(outro->getIdade() > esse->getIdade())
                 return false;
             return false;
         }
